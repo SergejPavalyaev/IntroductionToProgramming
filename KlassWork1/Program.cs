@@ -12,11 +12,15 @@ else {
     Console.WriteLine("False");
 }
 Задача 2
-System.Console.WriteLine("Input Numbers");
+System.Console.WriteLine("Input Number");
 int num = Convert.ToInt32(Console.ReadLine());
 int i = -num;
 while (i <= num) {
     Console.WriteLine(i);
     i ++;
 }
-*/
+Задача 3
+System.Console.WriteLine("Input Number");
+int num = Convert.ToInt32(Console.ReadLine());
+int summ = num/100 + num%10;
+Console.WriteLine(summ);*/
