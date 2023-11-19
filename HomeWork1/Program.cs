@@ -22,3 +22,10 @@
 // }
 // System.Console.WriteLine($"Максимальное введенное число `{max}`");
 //для возвращения значения из метода используют return
+// int number = 0;
+// if (number%2 == 0){
+//     System.Console.WriteLine($"Число `{number}` чётное");
+// }
+// else {
+//     System.Console.WriteLine($"Число `{number}` нечётное");
+// }
