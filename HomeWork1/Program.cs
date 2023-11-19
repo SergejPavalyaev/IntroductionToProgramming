@@ -29,3 +29,7 @@
 // else {
 //     System.Console.WriteLine($"Число `{number}` нечётное");
 // }
+// int number = 13;
+// for (int i = 2; i <= number; i = i + 2) {
+//     System.Console.Write($"{i}  ");
+// }
