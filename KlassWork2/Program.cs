@@ -18,10 +18,12 @@ namespace KlassWork2
             
         }
         public static int MathPow(int num){
-            int temp = num % 10;
-            int secondDigit = temp % 10;
             int therdDigit = num % 10;
-            int result = (int) Math.Pow (secondDigit, therdDigit);
+            int secondDigit = (num / 10) % 10;
+            int result = 1;
+            for (int i = 1; i <= therdDigit; i++){
+                result = result * secondDigit;
+            }
             return result;
         }
 }
