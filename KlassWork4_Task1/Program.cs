@@ -20,12 +20,27 @@
         }
         
         public static int InputNumber (){
-            string ? numString = Console.ReadLine();
-            int numInt;
-            while (! Int32.TryParse(numString, out numInt)){// перевод строки в число с проверкой ввода с консоли
-                System.Console.WriteLine("Error, try again");
-                numString = Console.ReadLine();
-            }
+            // string ? numString = Console.ReadLine();
+            // int numInt;
+            // while (! Int32.TryParse(numString, out numInt)){    // перевод строки в число с проверкой ввода с консоли
+            //     System.Console.WriteLine("Error, try again");
+            //     numString = Console.ReadLine();
+            // }
+            int numInt = 0;
+            bool flag = true;
+while (flag) // метод try-catch. Если ошибка - выведи сообщение. Возможно добавить исключения. Лучше комбинировать с while.
+{
+                try 
+                {
+                    numInt = Convert.ToInt32(System.Console.ReadLine());
+                    flag = false;
+                }
+                catch (System.Exception)
+                {
+                    System.Console.WriteLine("Error, try again");
+                    flag = true;
+                }
+}
             return numInt;
         }
         public static int [] InitArrayRandom (int size, int min, int max){
