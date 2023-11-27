@@ -14,7 +14,7 @@
             // int end = 1;
             // int count = DivideNumberEndNumber(array, divide, end);
             // System.Console.WriteLine($"Result = {count}");
-            int numbers = NumberFromArray(array);
+            int numbers = NumberFromArray(array, size);
             System.Console.WriteLine($"Number from array = > {numbers}");
 
         }
@@ -27,20 +27,30 @@
             //     numString = Console.ReadLine();
             // }
             int numInt = 0;
-            bool flag = true;
-while (flag) // метод try-catch. Если ошибка - выведи сообщение. Возможно добавить исключения. Лучше комбинировать с while.
-{
-                try 
+            bool flag = false;
+            bool flag2 = false;
+            while (!flag2){
+                while (!flag) // метод try-catch. Если ошибка - выведи сообщение. Возможно добавить исключения. Лучше комбинировать с while.
                 {
-                    numInt = Convert.ToInt32(System.Console.ReadLine());
-                    flag = false;
+                    try 
+                    {
+                        numInt = Convert.ToInt32(System.Console.ReadLine());
+                        flag = true;
+                    }
+                    catch (System.Exception)
+                    {
+                        System.Console.WriteLine("Error, try again");
+                        flag = false;
+                    }
                 }
-                catch (System.Exception)
-                {
+                if (numInt >= 0 & numInt <= 8) {//условия на проверку ввода
+                    flag2 = true;
+                }
+                else {
                     System.Console.WriteLine("Error, try again");
-                    flag = true;
+                    flag = false;//отправляет повторно запускать цикл try-catch
                 }
-}
+            }
             return numInt;
         }
         public static int [] InitArrayRandom (int size, int min, int max){
@@ -72,8 +82,7 @@ while (flag) // метод try-catch. Если ошибка - выведи со�
             }
             System.Console.WriteLine();
         }
-        public static int NumberFromArray (int [] array){
-            int size = array.Length;
+        public static int NumberFromArray (int [] array, int size){
             int number = 0;
             // array[0] = 0;
             // array[1] = 0;
